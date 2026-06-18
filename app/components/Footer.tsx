@@ -1,12 +1,32 @@
+"use client";
+
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { footerLinks, socialLinks } from "../utils/footerData";
 import FooterLinks from "./FooterLinks";
 import Image from "next/image";
+import GlowGrid from "./GlowGrid";
+import { useState } from "react";
 
 const Footer = () => {
+  const [mousePos, setMousePos] = useState({
+    x: 0,
+    y: 0,
+  });
+
   return (
-    <footer className="relative w-full overflow-hidden bg-[#020D18] text-white font-sans">
+    <footer
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+
+        setMousePos({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }}
+      className="relative w-full overflow-hidden bg-[#020D18] text-white font-sans"
+    >
+      <GlowGrid mousePos={mousePos} />
 
       <div className="section_wrapper relative z-10 border-b border-white/[0.07] py-12">
         <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10">
