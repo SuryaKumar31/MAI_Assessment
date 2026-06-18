@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: var(--font-montserrat), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.section_wrapper {
+  @apply px-3 sm:px-10 xl:px-24 w-full relative;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* scrollbar color */
+
+::-webkit-scrollbar {
+  width: 12px;
+  font-size: 18px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(219, 231, 241);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 20px;
+}
+
+.sign-in-dropdown {
+  position: relative;
+  background: rgba(10, 22, 40, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.sign-in-dropdown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top right,
+    rgba(30, 138, 201, 0.22),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+/* Hero */
+
+.hero_content_wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.hero_top h1 {
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.75rem;
+  row-gap: 0.5rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* TOOLS */
+
+.tools_wrapper {
+  background-image: url("https://res.cloudinary.com/dsoya5k03/image/upload/q_auto/f_auto/v1781691317/tools_k6pjyc.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.tools_swiper_wrapper .swiper {
+  padding: 40px 10px;
+}
+
+/* Trader Slider */
+
+.trader_swiper_wrapper .swiper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.trader_swiper_wrapper .swiper-wrapper {
+  padding-top: 50px;
+  padding-bottom: 130px;
+}
+
+/* BLOG */
+
+.blog_swiper_wrapper .swiper {
+  padding: 40px 0px;
+}
+
+/* TESTIMONIALS */
+
+.testimonial_wrapper {
+  background-image: url("https://d2iyhd3v3rvz2k.cloudfront.net/commonFiles/1775571841973-Rectangle_34624722.png");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.testimonial_overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #00000045;
+}
+
+.testimonial_swiper_wrapper .swiper {
+  padding-bottom: 40px;
+}
+
+/* SIGNUP */
+
+.signup_wrapper {
+  background-image: url("https://res.cloudinary.com/dsoya5k03/image/upload/q_auto/f_auto/v1781789025/img_em0ax8.webp");
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .trader_swiper_wrapper .swiper-wrapper {
+    padding-bottom: 30px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
