@@ -3,21 +3,21 @@
 import { useEffect, useState } from "react";
 
 export function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState<boolean | null>(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
 
-    const handleChange = (e: MediaQueryListEvent | MediaQueryList) => {
-      setIsDesktop(e.matches);
+    const update = () => {
+      setIsDesktop(mediaQuery.matches);
     };
 
-    handleChange(mediaQuery);
+    update();
 
-    mediaQuery.addEventListener("change", handleChange);
+    mediaQuery.addEventListener("change", update);
 
     return () => {
-      mediaQuery.removeEventListener("change", handleChange);
+      mediaQuery.removeEventListener("change", update);
     };
   }, []);
 

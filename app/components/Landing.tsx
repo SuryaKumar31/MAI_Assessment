@@ -1099,6 +1099,12 @@ const Landing = () => {
         <div className="lg:hidden">
           <BlogSwiper />
         </div>
+
+        <div className="text-center mt-10">
+          <button className="text-white bg-[#1F5CAC] shadow-md font-medium px-6 py-2 text-[14px] rounded-full cursor-pointer">
+            View All Blogs
+          </button>
+        </div>
       </section>
 
       {/* TESTIMONIALS */}

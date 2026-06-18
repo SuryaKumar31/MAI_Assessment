@@ -36,7 +36,7 @@ const SecondaryNav = () => {
         <NavDropdown label="How It Works" items={howItWorksItems} />
 
         <div className="relative">
-          <Link href="/projects">
+          <Link href="/">
             <span className={navLinkClassName} style={navLinkStyle}>
               Projects
             </span>
@@ -44,7 +44,7 @@ const SecondaryNav = () => {
         </div>
 
         <div className="relative">
-          <Link href="/blogs">
+          <Link href="/">
             <span className={navLinkClassName} style={navLinkStyle}>
               Blogs
             </span>
@@ -56,7 +56,7 @@ const SecondaryNav = () => {
 
       <div className="flex items-center gap-2">
         <div className="flex items-center gap-2">
-          <Link href="/post-a-project" className={actionLinkClassName}>
+          <Link href="/" className={actionLinkClassName}>
             <PostProjectIcon />
             Post a Project
           </Link>
@@ -71,7 +71,7 @@ const SecondaryNav = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <Link href="/projects" className={actionLinkClassName}>
+          <Link href="/" className={actionLinkClassName}>
             <SendProposalsIcon />
             Send Proposals
           </Link>
@@ -86,7 +86,7 @@ const SecondaryNav = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <Link href="/projects" className={actionLinkClassName}>
+          <Link href="/" className={actionLinkClassName}>
             <ApplyInternshipIcon />
             Apply Internship
           </Link>

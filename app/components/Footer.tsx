@@ -8,7 +8,7 @@ import GlowGrid from "./GlowGrid";
 const Footer = () => {
   return (
     <footer className="relative w-full overflow-hidden bg-[#020D18] text-white font-sans">
-      <GlowGrid />
+      {/* <GlowGrid /> */}
 
       <div className="section_wrapper relative z-10 border-b border-white/[0.07] py-12">
         <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10">

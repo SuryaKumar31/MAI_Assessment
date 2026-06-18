@@ -83,7 +83,8 @@ const NavDropdown = ({ label, items }: NavDropdownProps) => {
             {items.map((item) => (
               <MenuItem key={item.href}>
                 <Link
-                  href={item.href}
+                  // href={item.href}
+                  href="/"
                   className="relative z-10 flex items-center px-4 py-2.5 text-[14px] font-medium transition-all data-focus:text-white font-sans rounded-xl hover:bg-white/10"
                   style={{ color: "rgba(255,255,255,0.65)" }}
                 >

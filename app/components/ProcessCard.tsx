@@ -22,7 +22,6 @@ const ProcessCard = ({
     <motion.div
       initial={{
         opacity: 0,
-        // y: -80,
         x: window.innerWidth >= 768 ? -80 : 0,
       }}
       whileInView={{

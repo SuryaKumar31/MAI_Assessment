@@ -34,15 +34,61 @@ const getVariant = (index: number) => ({
 const FeaturesGrid = () => {
   const isDesktop = useIsDesktop();
 
+  // Prevent hydration issues
+  if (isDesktop === null) {
+    return (
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-4">
+          {features.map((feature, index) => (
+            <div
+              key={feature.id}
+              className={`
+                flex flex-col relative
+                ${
+                  index === 0
+                    ? "border-b border-gray-200 md:border-r p-6 md:pl-0"
+                    : ""
+                }
+                ${index === 1 ? "border-b border-gray-200 p-6 md:pr-0" : ""}
+                ${
+                  index === 2
+                    ? "border-b border-gray-200 md:border-b-0 md:border-r p-6 md:pl-0 md:pb-0"
+                    : ""
+                }
+                ${index === 3 ? "p-6 md:pr-0 md:pb-0" : ""}
+              `}
+            >
+              <div className="relative mb-3 mt-3 md:mt-0 md:mb-5">
+                <span
+                  className="absolute -left-3 md:left-8 -top-8 md:top-2 text-[100px] opacity-90 z-0 select-none leading-none tracking-tighter"
+                  style={{
+                    color: feature.bgColor,
+                  }}
+                >
+                  {feature.id}
+                </span>
+
+                <h3 className="relative z-10 pt-6 md:pt-14 text-[1.1rem] md:text-2xl font-bold text-gray-800">
+                  {feature.title}
+                </h3>
+              </div>
+
+              <p className="relative z-10 text-sm md:text-[15px] leading-relaxed text-gray-500">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 mt-4">
         {features.map((feature, index) => (
           <motion.div
             key={feature.id}
-            // variants={getVariant(index)}
-            // initial="hidden"
-            // whileInView="visible"
             variants={isDesktop ? getVariant(index) : undefined}
             initial={isDesktop ? "hidden" : false}
             whileInView={isDesktop ? "visible" : undefined}
