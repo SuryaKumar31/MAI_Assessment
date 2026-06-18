@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { features } from "../utils/data";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 
@@ -11,7 +11,7 @@ const directions = [
   { x: "-50%", y: "-50%" },
 ];
 
-const getVariant = (index: number) => ({
+const getVariant = (index: number): Variants => ({
   hidden: {
     x: directions[index].x,
     y: directions[index].y,
