@@ -3,7 +3,6 @@ import Link from "next/link";
 import { footerLinks, socialLinks } from "../utils/footerData";
 import FooterLinks from "./FooterLinks";
 import Image from "next/image";
-import GlowGrid from "./GlowGrid";
 
 const Footer = () => {
   return (
@@ -18,7 +17,7 @@ const Footer = () => {
             </span>
             <h3 className="text-4xl md:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight text-white">
               Let&apos;s{" "}
-              <span className="bg-gradient-to-r from-[#4DB8FF] via-[#00D4FF] to-[#0077B6] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-[#4DB8FF] via-[#00D4FF] to-[#0077B6] bg-clip-text text-transparent">
                 Build
               </span>
               <br />
@@ -86,7 +85,7 @@ const Footer = () => {
                       ${social.bg}
                     `}
                   >
-                    <Icon size={15} strokeWidth={2} />
+                    <Icon />
                   </a>
                 );
               })}
@@ -111,11 +110,11 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <div className="flex items-start gap-3 text-[16px] text-white">
-                  <span className="mt-0.5 flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-lg bg-[#0077B6]/20">
+                  <span className="mt-0.5 shrink-0 flex items-center justify-center w-6 h-6 rounded-lg bg-[#0077B6]/20">
                     <MapPin className="h-3 w-3 text-[#4DB8FF]" />
                   </span>
 
-                  <span className="break-words min-w-0">
+                  <span className="wrap-break-word min-w-0">
                     1 De La Warr Way, Cambourne, Cambridge CB23 6DX
                   </span>
                 </div>
@@ -126,11 +125,13 @@ const Footer = () => {
                   href="tel:+442080043345"
                   className="group flex items-start gap-3 text-[16px]"
                 >
-                  <span className="mt-0.5 flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-lg bg-[#0077B6]/20 group-hover:bg-[#0077B6]/40 transition-colors duration-200">
+                  <span className="mt-0.5 shrink-0 flex items-center justify-center w-6 h-6 rounded-lg bg-[#0077B6]/20 group-hover:bg-[#0077B6]/40 transition-colors duration-200">
                     <Phone className="h-3 w-3 text-[#4DB8FF]" />
                   </span>
 
-                  <span className="break-words min-w-0">+44 208 004 3345</span>
+                  <span className="wrap-break-word min-w-0">
+                    +44 208 004 3345
+                  </span>
                 </Link>
               </li>
 
@@ -139,11 +140,13 @@ const Footer = () => {
                   href="mailto:info@myproject.ai"
                   className="group flex items-start gap-3 text-[16px]"
                 >
-                  <span className="mt-0.5 flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-lg bg-[#0077B6]/20 group-hover:bg-[#0077B6]/40 transition-colors duration-200">
+                  <span className="mt-0.5 shrink-0 flex items-center justify-center w-6 h-6 rounded-lg bg-[#0077B6]/20 group-hover:bg-[#0077B6]/40 transition-colors duration-200">
                     <Mail className="h-3 w-3 text-[#4DB8FF]" />
                   </span>
 
-                  <span className="break-words min-w-0">info@myproject.ai</span>
+                  <span className="wrap-break-word min-w-0">
+                    info@myproject.ai
+                  </span>
                 </Link>
               </li>
             </ul>
@@ -151,13 +154,13 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="section_wrapper my-4 pb-4 border-b border-white/[0.06]">
+      <div className="section_wrapper my-4 pb-4 border-b border-white/6">
         <Image
           src="https://d2iyhd3v3rvz2k.cloudfront.net/commonFiles/EUGDPRComplaint.png"
           alt="MAI Copyright"
           width={60}
           height={60}
-          className="w-[50px] h-[50px] md:w-[60px] md:h-[60px]"
+          className="w-12.5 h-12.5 md:w-15 md:h-15"
         />
       </div>
 

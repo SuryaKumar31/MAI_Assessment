@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 type ProcessCardProps = {
   id: number;
@@ -18,17 +21,39 @@ const ProcessCard = ({
   description,
   index,
 }: ProcessCardProps) => {
+  const isDesktop = useIsDesktop();
+
+  if (isDesktop === null) {
+    return null;
+  }
+
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        x: window.innerWidth >= 768 ? -80 : 0,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        x: 0,
-      }}
+      // initial={{
+      //   opacity: 0,
+      //   x: window.innerWidth >= 768 ? -80 : 0,
+      // }}
+      // whileInView={{
+      //   opacity: 1,
+      //   y: 0,
+      //   x: 0,
+      // }}
+      initial={
+        isDesktop
+          ? {
+              opacity: 0,
+              x: -80,
+            }
+          : false
+      }
+      whileInView={
+        isDesktop
+          ? {
+              opacity: 1,
+              x: 0,
+            }
+          : undefined
+      }
       viewport={{
         once: true,
         amount: 0.3,
@@ -36,7 +61,8 @@ const ProcessCard = ({
       transition={{
         duration: 1,
         delay: delays[index],
-        ease: "easeOut",
+        // ease: "easeOut",
+        ease: [0.16, 1, 0.3, 1],
       }}
       className="flex flex-col items-center relative"
     >
