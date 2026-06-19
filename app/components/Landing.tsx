@@ -781,7 +781,7 @@ const Landing = () => {
           <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-3 mt-2.5">
             How To Find Verified Traders
           </h3>
-          <p className="text-sm md:text-md text-gray-500">
+          <p className="text-sm md:text-base text-gray-500">
             Find trusted professionals in 4 simple steps
           </p>
         </motion.div>
@@ -856,7 +856,7 @@ const Landing = () => {
               Explore Real UK Projects
             </h2>
 
-            <span className="text-sm md:text-md text-gray-500">
+            <span className="text-sm md:text-base text-gray-500">
               From loft conversions in Leeds to boiler installs in Bristol.
             </span>
           </motion.div>
@@ -1048,7 +1048,7 @@ const Landing = () => {
           <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-3 mt-2.5">
             Where Traders & Homeowners Both Win
           </h3>
-          <p className="text-sm md:text-md text-gray-500 max-w-2xl mx-auto leading-relaxed font-sans">
+          <p className="text-sm md:text-lg text-gray-500 max-w-xl mx-auto leading-relaxed font-sans">
             From first brief to final delivery. MAI gives you the tools, talent,
             and transparency to build with confidence.
           </p>
@@ -1085,7 +1085,7 @@ const Landing = () => {
           <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-3">
             Latest Blog
           </h3>
-          <p className="text-sm md:text-md text-gray-500 max-w-2xl mx-auto">
+          <p className="text-sm md:text-lg text-gray-500 max-w-3xl mx-auto">
             Our articles cover a range of topics to help you stay informed and
             make better decisions. Dive into expert advice and stay ahead in the
             industry with our engaging and informative content.

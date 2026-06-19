@@ -31,8 +31,8 @@ const Footer = () => {
       <div className="section_wrapper relative z-10 border-b border-white/[0.07] py-12">
         <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10">
           <div className="max-w-2xl">
-            <span className="text-[#4DB8FF] text-xs font-bold uppercase tracking-[0.3em] mb-4">
-              Start Today — It&apos;s Free
+            <span className="text-[#4DB8FF] text-md font-bold uppercase tracking-[0.3em] mb-4 inline-block">
+              Start Today - It&apos;s Free
             </span>
             <h3 className="text-4xl md:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight text-white">
               Let&apos;s{" "}
